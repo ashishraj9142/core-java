@@ -1,4 +1,7 @@
-package deepCopy;
+package com.nit.inheritance;
+
+
+
 
 class Animal {
 	public void eat() {
