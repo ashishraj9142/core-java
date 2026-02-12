@@ -1,9 +1,8 @@
 package com.nit.inheritance;
-
-class Animal{
+class Animal1{
 	private String name;
 
-	public Animal(String name) {
+	public Animal1(String name) {
 		super();
 		this.name = name;
 	}
@@ -18,11 +17,12 @@ class Animal{
 	
 }
 
-class Mammal extends Animal{
+class Mammal1 extends Animal{
 	private boolean  hasFur;
 
-	public Mammal(String name, boolean hasFur) {
-		super(name);
+
+	public Mammal1(boolean hasFur) {
+		super();
 		this.hasFur = hasFur;
 	}
 
@@ -35,12 +35,13 @@ class Mammal extends Animal{
 	}
 	
 }
-class Dog extends Mammal{
+class Dog1 extends Mammal1{
 	private String breed;
 
-	public Dog(String name, boolean hasFur, String name_breed) {
-		super(name, hasFur);
-		this.breed = name_breed;
+
+	public Dog1(String name, boolean hasFur, String breed) {
+		super(hasFur);
+		this.breed = breed;
 	}
 
 	public String getName_breed() {
@@ -52,17 +53,19 @@ class Dog extends Mammal{
 	}
 
 	@Override
-    public String toString() {
-        return "Dog [getName()=" + getName() +
-                ", isHasFur()=" + isHasFur() +
-                ", breed=" + breed + "]";
-    }
+	public String toString() {
+		return "Dog1 [breed=" + breed + ", getName_breed()=" + getName_breed() + ", isHasFur()=" + isHasFur()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+
 	}
 
 public class ZooManagement {
 
 	public static void main(String[] args) {
-		Dog dog = new Dog("Tommy",true,"Bulldog");
+		Dog1 dog = new Dog1("Tommy",true,"Bulldog");
         System.out.println(dog);
 	}
 
